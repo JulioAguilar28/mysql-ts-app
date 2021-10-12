@@ -1,6 +1,6 @@
 import express, { Application } from 'express'
 import morgan from 'morgan'
-import indexRouter from './controllers'
+import usersRouter from './users/users.routes'
 
 enum Settings {
   port = 'port',
@@ -26,7 +26,7 @@ export class App {
   }
 
   routes() {
-    this.app.use('/', indexRouter)
+    this.app.use('/users', usersRouter)
   }
 
   listen() {

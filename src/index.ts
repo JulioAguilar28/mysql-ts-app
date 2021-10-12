@@ -1,6 +1,10 @@
-import express from 'express'
-const app = express()
+import { App } from './app'
 
-app.listen(3000, () => {
-  console.log('holi')
-})
+const PORT = 3000
+
+const main = () => {
+  const app = new App(PORT)
+  app.listen()
+}
+
+main()

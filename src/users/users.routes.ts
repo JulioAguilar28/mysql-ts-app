@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { getUsers } from './controller'
+import * as UsersController from './usersController'
 
 const usersRouter = Router()
 
-usersRouter.route('/').get(getUsers).post()
+usersRouter.route('/').get(UsersController.getUsers).post()
 
-usersRouter.route('/:id').get().put().delete()
+usersRouter.route('/:id').get(UsersController.getUserById).put().delete()
 
 export default usersRouter
